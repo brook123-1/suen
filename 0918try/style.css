@@ -1,0 +1,163 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to bottom right, #f0f0f0, #e0e0e0);
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-container {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #046C7A;  // 更改为您指定的颜色
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3.5rem; /* 增大字体大小 */
+}
+
+header p {
+    margin: 0.5rem 0 0;
+    font-size: 1rem;
+    font-weight: 300;
+    color: white; /* 确保文字颜色为白色 */
+}
+
+main {
+    flex: 1 0 auto;
+    max-width: 1000px; /* 减小最大宽度 */
+    margin: 8rem auto 2rem; /* 增加顶部边距 */
+    padding: 0 1rem; /* 减小左右内边距 */
+}
+
+#photo-carousel {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.carousel-container {
+    height: 500px; /* 增加高度 */
+    overflow: hidden;
+}
+
+.carousel-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+
+.carousel-container img.active {
+    display: block;
+}
+
+.carousel-controls button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.carousel-controls .prev {
+    left: 1rem;
+}
+
+.carousel-controls .next {
+    right: 1rem;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.indicator.active {
+    background: white;
+}
+
+#about-me {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 800px; /* 限制"关于我"部分的最大宽度 */
+    margin: 0 auto; /* 居中"关于我"部分 */
+}
+
+footer {
+    flex-shrink: 0;
+    background-color: #34495e; /* 稍微不同的深蓝色 */
+    color: white;
+    text-align: center;
+    padding: 0.5rem 0; /* 减小上下内边距 */
+    margin-top: 2rem;
+    width: 100%; /* 恢复为全宽 */
+}
+
+.social-links {
+    margin-bottom: 0.3rem; /* 稍微减小社交链接的下边距 */
+}
+
+.social-icon {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 0.9rem; /* 稍微减小字体大小 */
+}
+
+footer p {
+    margin: 0.3rem 0; /* 减小版权信息的上下边距 */
+    font-size: 0.8rem; /* 减小版权信息的字体大小 */
+}
+
+@media (max-width: 768px) {
+    header {
+        position: static;
+    }
+
+    main {
+        margin-top: 2rem;
+    }
+
+    .carousel-container {
+        height: 300px; /* 在小屏幕上减小高度 */
+    }
+
+    #about-me {
+        padding: 1.5rem; /* 在小屏幕上减小内边距 */
+    }
+}
